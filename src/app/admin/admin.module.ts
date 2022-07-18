@@ -12,7 +12,7 @@ import { AdminComponent } from './admin.component';
 	],
 	imports: [
 		CommonModule,
-		AdminRoutingModule
+		AdminRoutingModule,
 	],
 	exports: [AdminComponent]
 })
