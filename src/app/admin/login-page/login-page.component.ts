@@ -31,14 +31,17 @@ export class LoginPageComponent implements OnInit {
   }
 
   submit() {
-    if (this.form.valid) {
-      return
-    }
+    //if (this.form.valid) {
+    //  return
+    //}
 
     const user: User = {
       email: this.form.value.email,
       password: this.form.value.password
     }
+
+    console.log('USER', user);
+
 
     this.auth.login(user).subscribe(() => {
       this.form.reset()
