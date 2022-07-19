@@ -33,6 +33,6 @@
 	</div>
 
 	<div class="card__button">
-		<button class="btn" type="submit" [disabled]="form.invalid">Увійти</button>
+		<button class="btn" type="submit" [disabled]="form.invalid || submitted">Увійти</button>
 	</div>
 </form>
