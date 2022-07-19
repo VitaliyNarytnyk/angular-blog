@@ -6,6 +6,7 @@ import { AdminLayoutComponent } from "./shared/components/admin-layout/admin-lay
 import { AdminComponent } from './admin.component';
 import { AuthService } from "./shared/services/auth.service";
 import { SharedModule } from "app/shared/shared.module";
+import { AuthGuard } from "./shared/services/auth.guard";
 
 @NgModule({
 	declarations: [
@@ -18,7 +19,7 @@ import { SharedModule } from "app/shared/shared.module";
 		SharedModule
 	],
 	exports: [AdminComponent],
-	providers: [AuthService]
+	providers: [AuthService, AuthGuard]
 })
 export class AdminModule {
 

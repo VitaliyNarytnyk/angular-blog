@@ -1,10 +1,14 @@
 <form class="card" [formGroup]="form" (ngSubmit)="submit()">
 	<div class="card__title">
-		<h2>Введіть дані для авторизації</h2>
+		<h2>Перейти до панелі адміністратора</h2>
 	</div>
 
 	<div class="alert alert-danger" *ngIf="auth.error$ |async as error">
 		{{ error | exMarks }}
+	</div>
+
+	<div class="alert alert-info" *ngIf="message">
+		{{ message }}
 	</div>
 
 	<div class="card__inputs">
