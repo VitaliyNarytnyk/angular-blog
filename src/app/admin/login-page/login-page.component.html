@@ -3,6 +3,10 @@
 		<h2>Введіть дані для авторизації</h2>
 	</div>
 
+	<div class="alert alert-danger" *ngIf="auth.error$ |async as error">
+		{{ error | exMarks }}
+	</div>
+
 	<div class="card__inputs">
 		<div class="form-control">
 			<label>E-mail</label>
