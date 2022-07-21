@@ -1,0 +1,46 @@
+form {
+	max-width: 800px;
+	margin: 0 auto
+}
+
+input {
+	//width: 100%;
+	font-size: 18px;
+	height: 50px;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid rgb(71, 71, 71);
+
+	&.ng-invalid.ng-touched {
+		border-bottom: 2px solid red;
+		background-color: rgb(255, 251, 251);
+	}
+
+	&.ng-valid.ng-touched {
+		border-bottom: 2px solid green;
+		background-color: rgb(250, 254, 255);
+	}
+}
+
+.card {
+	&__inputs {
+		padding: 0 20px;
+		width: 100%;
+		flex-direction: column;
+	}
+
+	&__button {
+		margin: 20px 0px 0px 0px;
+	}
+}
+
+label {
+	font-size: 20px;
+	margin: 0px 0px 5px 0px;
+}
+
+.btn {
+	width: 400px;
+	color: #fff;
+	background: rgb(26, 26, 26);
+}

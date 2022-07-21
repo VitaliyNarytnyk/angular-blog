@@ -7,6 +7,7 @@ import { AdminComponent } from './admin.component';
 import { AuthService } from "./shared/services/auth.service";
 import { SharedModule } from "app/shared/shared.module";
 import { AuthGuard } from "./shared/services/auth.guard";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,9 @@ import { AuthGuard } from "./shared/services/auth.guard";
 	imports: [
 		CommonModule,
 		AdminRoutingModule,
-		SharedModule
+		SharedModule,
+		FormsModule,
+		ReactiveFormsModule
 	],
 	exports: [AdminComponent],
 	providers: [AuthService, AuthGuard]

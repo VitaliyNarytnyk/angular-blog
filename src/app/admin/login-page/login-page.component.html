@@ -13,8 +13,8 @@
 
 	<div class="card__inputs">
 		<div class="form-control">
-			<label>E-mail</label>
-			<input type="text" formControlName="email">
+			<label for="email">E-mail</label>
+			<input id="email" type="text" formControlName="email">
 			<div *ngIf="form.get('email')!.invalid && form.get('email')!.touched" class="validation">
 				<small *ngIf="form.get('email')!.errors?.['required']">
 					Поле 'E-mail' не може бути пустим.
@@ -26,8 +26,8 @@
 		</div>
 
 		<div class="form-control">
-			<label>Password</label>
-			<input type="password" formControlName="password">
+			<label for="password">Password</label>
+			<input id="password" type="password" formControlName="password">
 			<div *ngIf="form.get('password')!.invalid && form.get('password')!.touched" class="validation">
 				<small *ngIf="form.get('password')!.errors?.['required']">
 					Поле 'Password' не може бути пустим.
@@ -41,6 +41,6 @@
 	</div>
 
 	<div class="card__button">
-		<button class="btn" type="submit" [disabled]="form.invalid || submitted">Увійти</button>
+		<button class="btn btn-dark" type="submit" [disabled]="form.invalid || submitted">Увійти</button>
 	</div>
 </form>

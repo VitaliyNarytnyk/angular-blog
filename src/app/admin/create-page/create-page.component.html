@@ -1,1 +1,36 @@
-<p>create-page works!</p>
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+	<div class="card__title">
+		<h1>Створення нового поста</h1>
+	</div>
+
+	<div class="card__inputs">
+		<div class="form-control">
+			<label for="title">Назва поста:</label>
+			<input id="title" type="text" formControlName="title">
+			<div *ngIf="form.get('title')!.invalid && form.get('title')!.touched" class="validation">
+				<small *ngIf="form.get('title')!.errors?.['required']">
+					Поле не може бути пустим.
+				</small>
+			</div>
+		</div>
+
+		<div class="form-control">
+			<label for="">Контент поста:</label>
+		</div>
+
+		<div class="form-control">
+			<label for="author">Автор поста:</label>
+			<input id="author" type="text" formControlName="author">
+			<div *ngIf="form.get('author')!.invalid && form.get('author')!.touched" class="validation">
+				<small *ngIf="form.get('author')!.errors?.['required']">
+					Поле не може бути пустим.
+				</small>
+			</div>
+		</div>
+
+		<div class="card__button">
+			<button class="btn btn-dark" type="submit" [disabled]="form.invalid">Створити пост</button>
+		</div>
+	</div>
+
+</form>
