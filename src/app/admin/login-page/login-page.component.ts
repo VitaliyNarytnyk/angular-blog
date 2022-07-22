@@ -23,7 +23,9 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       if (params['loginAgain']) {
-        this.message = 'Будь ласка, введіть дані для авторизації'
+        this.message = 'Будь ласка, введіть дані для авторизації.'
+      } else if (params['authFailed']) {
+        this.message = 'Час вашої сесії вичерпан. Будь ласка, увійдіть в систему знову.'
       }
     })
 

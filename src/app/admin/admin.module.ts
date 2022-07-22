@@ -22,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 		ReactiveFormsModule
 	],
 	exports: [AdminComponent],
-	providers: [AuthService, AuthGuard]
+	providers: [AuthGuard]
 })
 export class AdminModule {
 

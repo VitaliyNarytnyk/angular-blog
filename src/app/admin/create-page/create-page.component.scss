@@ -23,6 +23,11 @@ input {
 }
 
 .card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
 	&__inputs {
 		padding: 0 20px;
 		width: 100%;
