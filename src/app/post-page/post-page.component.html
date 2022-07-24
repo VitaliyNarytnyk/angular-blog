@@ -1,31 +1,22 @@
-<div class="post">
-	<div class="header">
-		<h1>Post title</h1>
+<div *ngIf="post$ | async as post; else loading">
+	<div class="post">
+		<div class="header">
+			<h1>{{ post.title }}</h1>
 
-		<button routerLink="/" class="btn btn-link">На головну</button>
-	</div>
+			<button routerLink="/" class="btn btn-link">На головну</button>
+		</div>
 
-	<div class="info">
-		<strong>Автор</strong>
-		<small>12.09.2019</small>
-	</div>
+		<div class="info">
+			<strong>{{ post.author }}</strong>
+			<small>{{ post.date | date:'medium':null!:'ru' }}</small>
+		</div>
 
-	<div>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repudiandae asperiores eligendi, eius excepturi
-			aut fuga magni magnam reprehenderit libero doloribus debitis labore laborum perspiciatis ad illum cumque in!
-			Necessitatibus temporibus quo earum dolor nulla saepe veritatis, odio, a doloremque maxime culpa, voluptates quod
-			magnam quisquam voluptatum error numquam natus?</p>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repudiandae asperiores eligendi, eius excepturi
-			aut fuga magni magnam reprehenderit libero doloribus debitis labore laborum perspiciatis ad illum cumque in!
-			Necessitatibus temporibus quo earum dolor nulla saepe veritatis, odio, a doloremque maxime culpa, voluptates quod
-			magnam quisquam voluptatum error numquam natus?</p>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repudiandae asperiores eligendi, eius excepturi
-			aut fuga magni magnam reprehenderit libero doloribus debitis labore laborum perspiciatis ad illum cumque in!
-			Necessitatibus temporibus quo earum dolor nulla saepe veritatis, odio, a doloremque maxime culpa, voluptates quod
-			magnam quisquam voluptatum error numquam natus?</p>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repudiandae asperiores eligendi, eius excepturi
-			aut fuga magni magnam reprehenderit libero doloribus debitis labore laborum perspiciatis ad illum cumque in!
-			Necessitatibus temporibus quo earum dolor nulla saepe veritatis, odio, a doloremque maxime culpa, voluptates quod
-			magnam quisquam voluptatum error numquam natus?</p>
+		<div>
+			<quill-view-html [content]="post.text"></quill-view-html>
+		</div>
 	</div>
 </div>
+
+<ng-template #loading>
+	<p [ngStyle]="{'fontSize': '28px', 'fontWeight': '600'}" class="text-center">Триває завантаження...</p>
+</ng-template>
